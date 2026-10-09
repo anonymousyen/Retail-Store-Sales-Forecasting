@@ -1,4 +1,4 @@
-# Egyptian used Car Market Intelligence
+# Egyptian Used Car Market Intelligence
 
 An end-to-end data intelligence platform for analyzing Egypt’s used car market, estimating fair vehicle values, predicting prices, and identifying overpriced listings through data engineering, analytics, and machine learning.
 
