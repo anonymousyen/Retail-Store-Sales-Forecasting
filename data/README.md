@@ -1,41 +1,30 @@
 # Data
 
-The raw dataset is the **Rossmann Store Sales** dataset originally hosted on Kaggle.
+The dataset used in this project is the **Rossmann Store Sales** dataset from Kaggle.
 
-> Download link: https://www.kaggle.com/competitions/rossmann-store-sales/data
+**Download it here:** https://www.kaggle.com/competitions/rossmann-store-sales/data
 
-## Files expected here
+Place `train.csv` in this folder before running any notebook. The file is excluded from version control (it's ~70 MB).
 
-| File | Description |
-|------|-------------|
-| `train.csv` | Historical sales data (1 017 209 rows × 18 columns) |
-| `test.csv` | Holdout set used for Kaggle submission |
-| `store.csv` | Supplemental store metadata |
-| `sample_submission.csv` | Kaggle submission template |
+## Columns
 
-> [!IMPORTANT]
-> These files are excluded from version control via `.gitignore` because of their size.  
-> Place them in this folder before running any notebook.
-
-## Column reference (`train.csv`)
-
-| Column | Type | Description |
-|--------|------|-------------|
-| `Store` | int | Unique store ID (1 – 1 115) |
-| `DayOfWeek` | int | 1 = Monday … 7 = Sunday |
-| `Date` | date | Transaction date |
-| `Sales` | int | Daily turnover (target) |
-| `Customers` | int | Number of customers that day |
-| `Open` | int | 0 = closed, 1 = open |
-| `Promo` | int | 1 if the store is running a promo |
-| `StateHoliday` | str | `0` = none, `a` = public, `b` = Easter, `c` = Christmas |
-| `SchoolHoliday` | int | 1 if public schools are closed |
-| `StoreType` | str | Store model: `a`, `b`, `c`, `d` |
-| `Assortment` | str | Assortment level: `a` = basic, `b` = extra, `c` = extended |
-| `CompetitionDistance` | float | Distance (m) to nearest competitor |
-| `CompetitionOpenSinceMonth` | float | Month nearest competitor opened |
-| `CompetitionOpenSinceYear` | float | Year nearest competitor opened |
-| `Promo2` | int | 1 if the store participates in a recurring promo |
-| `Promo2SinceWeek` | float | Week Promo2 started |
-| `Promo2SinceYear` | float | Year Promo2 started |
-| `PromoInterval` | str | Months Promo2 restarts (e.g. `Jan,Apr,Jul,Oct`) |
+| Column | Description |
+|--------|-------------|
+| `Store` | Store ID (1–1115) |
+| `DayOfWeek` | 1 = Monday, 7 = Sunday |
+| `Date` | Transaction date |
+| `Sales` | Daily sales — this is what we're predicting |
+| `Customers` | Number of customers that day |
+| `Open` | 0 = closed, 1 = open |
+| `Promo` | 1 if the store had a promo running |
+| `StateHoliday` | `0` none, `a` public holiday, `b` Easter, `c` Christmas |
+| `SchoolHoliday` | 1 if schools were closed |
+| `StoreType` | Store category: `a`, `b`, `c`, `d` |
+| `Assortment` | Product range: `a` basic, `b` extra, `c` extended |
+| `CompetitionDistance` | Distance (m) to nearest competitor store |
+| `CompetitionOpenSinceMonth` | Month the nearest competitor opened |
+| `CompetitionOpenSinceYear` | Year the nearest competitor opened |
+| `Promo2` | 1 if the store runs a recurring promotion |
+| `Promo2SinceWeek` | Week Promo2 started |
+| `Promo2SinceYear` | Year Promo2 started |
+| `PromoInterval` | Months Promo2 restarts (e.g. `Jan,Apr,Jul,Oct`) |
