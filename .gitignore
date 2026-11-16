@@ -1,0 +1,31 @@
+# ── Data files (too large for GitHub) ───────────────────────────────────────
+data/*.csv
+data/*.zip
+data/*.rar
+data/*.parquet
+data/*.feather
+
+# ── Saved model artefacts ────────────────────────────────────────────────────
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pt
+models/*.bin
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.ipynb_checkpoints/
+*.egg-info/
+dist/
+build/
+.env
+venv/
+.venv/
+
+# ── OS / editor ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
