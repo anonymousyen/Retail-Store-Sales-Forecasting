@@ -1,106 +1,44 @@
 # Retail Store Sales Forecasting
 
- An end-to-end machine learning and data analytics project for forecasting retail sales using the Rossmann Store Sales dataset. The platform leverages historical sales records, promotions, store attributes, and temporal trends to predict future sales, uncover business insights, and support data-driven decision-making in the retail sector. 
+A structured, end-to-end machine learning project to forecast daily retail sales across Rossmann stores. The project focuses on disciplined data preprocessing, feature engineering from temporal and operational store data, and comparing linear vs. tree-based regression models.
 
-Overview
+---
 
- This project combines data engineering, exploratory analysis, feature engineering, and predictive modeling to analyze retail sales behavior and forecast store performance.
+## Project Overview
 
-The platform enables:
+- **Dataset:** Rossmann Store Sales (historical daily sales across 1,115 stores)
+- **Target Variable:** `Sales` (daily store revenue)
+- **Problem Type:** Supervised Regression
+- **Core Models:** 
+  - **Linear Regression** — baseline linear model evaluating direct feature relationships
+  - **Decision Tree Regressor** — non-linear model capturing store interactions, promotions, and seasonality thresholds
 
+---
 
+## Project Workflow
+Raw Data ─► 01 EDA ─► 02 Cleaning & Features ─► 03 Missing Values ─► 04 Outliers ─► Preprocessing ─► ML Modeling
 
-Daily retail sales forecasting
-Analysis of sales trends and seasonality
-Promotion effectiveness evaluation
-Holiday and event impact assessment
-Store performance benchmarking
-Revenue pattern discovery
-Demand forecasting and trend analysis
-Explainable machine learning predictions
+1. **`01 - Data Exploration.ipynb`**  
+   Exploratory data analysis covering sales distributions, customer behavior, store types, assortments, and promotions.
+2. **`02 - Data Cleaning & Feature Engineering.ipynb`**  
+   Drops closed store days and invalid records; engineers calendar features (`Quarter`, `IsWeekend`, `IsMonthStart`, `IsMonthEnd`) and calculates competition/promotion duration metrics (`CompetitionOpenMonths`, `Promo2OpenWeeks`).
+3. **`03 - Missing Values Handling.ipynb`**  
+   Domain-specific imputation: median for skewed numericals (`CompetitionDistance`, `CompetitionOpenMonths`), mode for competitor dates, and explicit zero/None values for non-Promo2 stores.
+4. **`04 - Outliers Handling.ipynb`** *(upcoming)*  
+   Detection and treatment of anomalies in customer traffic and sales.
+5. **Preprocessing & Machine Learning**  
+   Final column transformations, train/test splitting, fitting Linear Regression and Decision Tree models, and comparing performance using RMSE and MAE.
 
+---
 
+## Repository Structure
+Retail-Store-Sales-Forecasting/ ├── code/ │ ├── 01 - Data Exploration.ipynb │ ├── 02 - Data Cleaning & Feature Engineering.ipynb │ ├── 03 - Missing Values Handling.ipynb │ └── ... ├── data/ │ └── train_no_missing.csv # Latest processed dataset (tracked with Git LFS) ├── README.md └── .gitignore
 
-The goal is to transform raw retail transaction data into actionable business intelligence that helps retailers optimize inventory planning, resource allocation, marketing strategies, and revenue forecasting.
+---
 
+## Tech Stack
 
-
-Project Goals
-
-
-Build a robust retail sales forecasting pipeline
-Design and implement a structured data integration workflow
-Clean, preprocess, and transform large-scale retail datasets
-Perform exploratory data analysis on sales and customer behavior
-Engineer time-based and store-specific features
-Analyze seasonality, promotions, and holiday effects
-Develop accurate sales prediction models
-Compare multiple regression algorithms and forecasting approaches
-Identify key factors influencing store sales performance
-Implement model explainability and feature importance analysis
-Generate actionable business insights and recommendations
-Create interactive dashboards for sales exploration
-Expose forecasting capabilities through APIs
-Deploy a scalable and production-ready analytics solution
-
-
-Dataset Information
-
-
-Industry: Retail
-Dataset: Rossmann Store Sales (Kaggle Competition)
-Problem Type: Supervised Regression
-Target Variable: Sales
-Dataset Size: ~1 Million Records × 18 Features (after data merging)
-
-
-Key Analytical Areas
-
-
-Sales forecasting and revenue prediction
-Promotion impact analysis
-Seasonal demand forecasting
-Holiday effect analysis
-Store-level performance benchmarking
-Trend and growth analysis
-Geographic and operational insights
-Feature importance and model interpretability
-
-
-Machine Learning & Analytics
-
-
-Linear Regression
-Random Forest Regression
-Gradient Boosting Machines
-XGBoost
-LightGBM
-CatBoost
-Ensemble Learning Approaches
-
-
-Technology Stack
-
-
-Python
-Pandas
-NumPy
-Scikit-learn
-XGBoost
-LightGBM
-Matplotlib
-Seaborn
-Jupyter Notebook
-SQL
-Power BI / Tableau
-
-
-Expected Outcomes
-
-
-Accurate retail sales forecasts across multiple stores
-Better understanding of promotion and holiday impacts
-Identification of key sales-driving factors
-Improved inventory and workforce planning support
-Data-driven recommendations for revenue optimization
-Scalable forecasting framework for retail business operations
+- **Python** (Pandas, NumPy)
+- **Machine Learning:** Scikit-learn
+- **Visualization:** Matplotlib, Seaborn
+- **Data Versioning:** Git LFS
